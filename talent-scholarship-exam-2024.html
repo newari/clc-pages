@@ -212,7 +212,8 @@
             width: 300px;
             height: 41px;
             border: none;
-            max-width: 99%;
+            max-width: 100%;
+            padding: 2px 15px;
         }
 
         #new-herosection .checkbox-div {
@@ -227,7 +228,7 @@
         #new-herosection .Authorize {
             display: flex;
             justify-content: flex-start;
-            align-items: flex-start;
+            align-items: baseline;
             gap: 9px;
         }
 
@@ -519,17 +520,17 @@
                         </div>
                     </div>
                     <div class="col-12 col-lg-4 newRegiscol">
-                        <div class="newRegis">
+                        <form class="newRegis" action="https://clctecno.com/signup">
                             <h4>Register for Free</h4>
-                            <input type="text" name="name" placeholder="Enter your name..." class="inputField">
+                            <input type="number" name="reg-mobile" placeholder="Enter your mobile number" class="inputField" required>
                             <div class="checkbox-div">
                                 <div class="Authorize">
-                                    <input type="checkbox" id="Policy1" name="Policy1">
+                                    <input type="checkbox" id="Policy1" name="Policy1" required>
                                     <label for="Policy1"> I Authorize CLC to send information time to time via SMS,
                                         WhatsApp or at Postal Address</label><br>
                                 </div>
                                 <div class="pt-4">
-                                    <input type="checkbox" id="Policy2" name="Policy2">
+                                    <input type="checkbox" id="Policy2" name="Policy2" required>
                                     <label for="Policy1">I agree to Privacy Policy </label><br>
                                 </div>
                                 <div class="btndiv">
@@ -538,7 +539,7 @@
                                     </button>
                                 </div>
                             </div>
-                        </div>
+                        </form>
                     </div>
 
                 </div>
