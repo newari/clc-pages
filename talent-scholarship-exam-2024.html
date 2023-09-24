@@ -105,8 +105,6 @@
         Talent Exploring CLC National Olympiad 2024
     </title>
 
-
-
     <style>
         @media only screen and (max-width: 992px) {
             #Radiant p {
@@ -269,14 +267,12 @@
             }
         }
 
-        #citySection {
-            margin-top: 50px;
-        }
 
         #citySection .city {
+            padding-block: 1rem;
             text-align: center;
             background: #a73941;
-            height: 30px;
+            /* height: 30px; */
         }
 
         #citySection .city p {
@@ -291,7 +287,7 @@
         }
 
         #examInformation {
-            margin-top: 71px;
+            padding-top: 40px;
         }
 
         #examInformation .whoCan p {
@@ -341,7 +337,7 @@
             }
 
             #examInformation {
-                margin-top: 30px;
+                padding-top: 30px;
             }
 
             #examInformation .examImg img {
@@ -352,9 +348,8 @@
                 margin-bottom: 20px;
             }
         }
-
         #howToRegis {
-            margin: 30px 0px;
+                padding: 40px 0px 0;
         }
 
         #howToRegis .howRegis {
@@ -394,11 +389,17 @@
             padding-bottom: 20px;
             list-style: none;
         }
+        .p-600-40{
+            padding-top: 40px;
+        }
 
         @media only screen and (max-width:600px) {
+             .p-600-40{
+                padding-top: 30px;
+            }
             #howToRegis {
                 margin: 0px 0px;
-                margin-top: 30px;
+                padding-top: 30px;
             }
 
             #howToRegis .howRegis {
@@ -413,8 +414,13 @@
         #Syllabus a {
             text-decoration: none;
         }
+        .clc-page-title{
+            font-size: clamp(23px, 1rem + 1.8vw, 2.5rem);
+            color: #3870c2;font-weight: 500;
+            margin: 0px;
+        }
 
-        #Syllabus .Syllabusbtn {
+        #Syllabus .Syllabusbtn, .btn-red {
             display: flex;
             background: #a73941;
             justify-content: flex-start;
@@ -427,6 +433,7 @@
             margin-bottom: 20px;
             color: #fff;
         }
+        
 
         #Syllabus .Syllabusbtn i {
             color: #00b2e8;
@@ -474,10 +481,59 @@
             #states .mapDiv img {
                 width: 100%;
             }
-
+            div#photo-gallery{
+                padding-block: .5rem !important
+            }
             #states {
                 margin: 30px 0px;
             }
+        }
+        section#new-herosection {
+            padding-bottom: clamp(1.5rem, 1.5rem + 1.5vw, 50px);
+        }
+        .examDate img.icons {
+            width: clamp(2rem, 12%, 40px);
+            aspect-ratio: 1;
+            object-fit: fill;
+        }
+        div#photo-gallery {
+            background-color: #22438a;
+            padding-block: 1.5rem;
+        }
+        div#photo-gallery img {
+            aspect-ratio: 16/12;
+            object-fit: initial;
+            width: 100%;
+            height: 100%;
+            padding: 0.5rem;
+        }
+        div#photo-gallery span.b-navigation.b-navigation-prev.slick-arrow, div#photo-gallery span.b-navigation.b-navigation-next.active.slick-arrow {
+            top: 50%;
+            transform: translate(0.5rem, -57%);
+            z-index: 100;
+        }
+        div#photo-gallery span.b-navigation.b-navigation-prev.slick-arrow{
+            left: 0;
+        }
+        div#photo-gallery span.b-navigation.b-navigation-next.active.slick-arrow {     
+            left: calc(100% - 50px);
+        }
+        div#photo-gallery .slick-arrow i.fa.fa-angle-right, div#photo-gallery .slick-arrow i.fa.fa-angle-left{
+            transform: none;
+        }
+        .img-fit{
+            object-fit: contain;
+        }
+        .clc-gradient {
+            background-image: linear-gradient(74deg, #fef3e7 27%, #fdfcff 52%, #f5f4fe 100%) !important
+        }
+        .std-testimonial .std-image{
+            width: clamp(100px, 60%, 120px);
+            margin: auto;
+        }
+        .std-testimonial .std-image img{
+            padding: 1px;
+            background-color: #4871c8;
         }
     </style>
 
@@ -488,15 +544,13 @@
 
     <div id="app" v-cloak>
         <!-- menubar  -->
-
-
         <!-- herosection -->
-        <section id="new-herosection">
+        <section id="new-herosection" class="clc-gradient">
             <div class="container">
                 <div class="row">
                     <div class="col-12">
-                        <div class="heroDiv">
-                            <img class="heroimg" src="./assets/img/clclogo.png" alt="logo">
+                        <div class="heroDiv pt-1">
+                            <img class="heroimg" src="./assets/img/langing-page/Logo.png" alt="logo">
                         </div>
                     </div>
                     <div class="col-12 col-lg-8 IndiaBiggest">
@@ -514,7 +568,7 @@
                             </div>
                             <div>
                                 <div class="IndiaBiggest-img">
-                                    <img class="heroimg" src="./assets/img/prizes.png" alt="prizes">
+                                    <img class="heroimg" src="./assets/img/langing-page/Prize.png" alt="prizes">
                                 </div>
                             </div>
                         </div>
@@ -522,7 +576,7 @@
                     <div class="col-12 col-lg-4 newRegiscol">
                         <form class="newRegis" action="https://clctecno.com/signup">
                             <h4>Register for Free</h4>
-                            <input type="number" name="reg-mobile" placeholder="Enter your mobile number" class="inputField" required>
+                            <input type="number" name="reg-mobile" placeholder="Enter your mobile number" class="inputField" minlength="10" maxlength="10" required>
                             <div class="checkbox-div">
                                 <div class="Authorize">
                                     <input type="checkbox" id="Policy1" name="Policy1" required>
@@ -555,7 +609,7 @@
         </section>
 
         <!-- exam information -->
-        <section id="examInformation">
+        <section id="examInformation" class="p-600-40">
             <div class="container">
                 <div class="row">
                     <div class="col-lg-7 col-12">
@@ -573,7 +627,8 @@
                         <div class="examDate row">
                             <div class="col-lg-6">
                                 <div class="examDateicon">
-                                    <i class="fa fa-calendar" aria-hidden="true"></i>
+                                    <!-- <i class="fa fa-calendar" aria-hidden="true"></i> -->
+                                    <img class="icons" src="./assets/img/langing-page/Icon/date-outline-badged.svg" alt="">
                                     <div>
                                         <h6> Exam Date</h6>
                                         <p>05 November, 2023<br> (11:00 AM to 01:00 PM)</p>
@@ -582,7 +637,8 @@
                             </div>
                             <div class="col-lg-6">
                                 <div class="examDateicon">
-                                    <i class="fa fa-calendar-o" aria-hidden="true"></i>
+                                    <!-- <i class="fa fa-calendar-o" aria-hidden="true"></i> -->
+                                    <img class="icons" src="./assets/img/langing-page/Icon/coin-bag-line.svg" alt="">
                                     <div>
                                         <h6> Exam Free</h6>
                                         <p>Free</p>
@@ -591,7 +647,8 @@
                             </div>
                             <div class="col-lg-6">
                                 <div class="examDateicon">
-                                    <i class="fa fa-shopping-bag" aria-hidden="true"></i>
+                                    <!-- <i class="fa fa-shopping-bag" aria-hidden="true"></i> -->
+                                    <img class="icons" src="./assets/img/langing-page/Icon/date-line.svg" alt="">
                                     <div>
                                         <h6> Last Date of Registration</h6>
                                         <p>30 October, 2023</p>
@@ -600,7 +657,8 @@
                             </div>
                             <div class="col-lg-6">
                                 <div class="examDateicon">
-                                    <i class="fa fa-file-text-o" aria-hidden="true"></i>
+                                    <!-- <i class="fa fa-file-text-o" aria-hidden="true"></i> -->
+                                    <img class="icons" src="./assets/img/langing-page/Icon/chart.svg" alt="">
                                     <div>
                                         <h6> Exam Mode</h6>
                                         <p>Offline</p>
@@ -609,7 +667,8 @@
                             </div>
                             <div class="col-lg-6">
                                 <div class="examDateicon">
-                                    <i class="fa fa-signal" aria-hidden="true"></i>
+                                    <!-- <i class="fa fa-signal" aria-hidden="true"></i> -->
+                                    <img class="icons" src="./assets/img/langing-page/Icon/pinpaper-filled_outline.svg" alt="">
                                     <div>
                                         <h6> Date of Result Declaration</h6>
                                         <p>22 November, 2023</p>
@@ -620,7 +679,7 @@
                     </div>
                     <div class="col-lg-5 col-12">
                         <div class="examImg">
-                            <img src="./assets/img/tripmin.png">
+                            <img src="./assets/img/tripmin.png" alt="trip">
                         </div>
                     </div>
                 </div>
@@ -629,13 +688,12 @@
         </section>
 
         <!-- how to Register   -->
-        <section id="howToRegis">
+        <section id="howToRegis" class="clc-gradient p-600-40">
             <div class="container">
 
                 <div class="row">
                     <div class="col-12">
-                        <p
-                            style="font-size: clamp(23px, 1rem + 1.8vw, 2.5rem);color: #3870c2;font-weight: 500;margin: 0px;">
+                        <p class="clc-page-title">
                             How to Register</p>
                     </div>
                     <div class="col-lg-4 col-12">
@@ -691,13 +749,11 @@
             </div>
         </section>
         <!-- pattern -->
-        <section id="Syllabus">
+        <section id="Syllabus" class="p-600-40">
             <div class="container">
                 <div class="row ">
                     <div class="col-lg-12 col-12">
-                        <p style="font-size: clamp(23px, 1rem + 1.8vw, 2.5rem);
-                            font-weight: 600;
-                            color: #3b72c3;">Syllabus and Pattern</p>
+                        <p class="clc-page-title">Syllabus and Pattern</p>
                         <p class="pb-4">Syllabus consists of topic from current class.Students are advised to find these
                             topics from<br> their NCERT books and prepare thoroughly. </p>
                     </div>
@@ -779,64 +835,67 @@
                             </div>
                         </div>
                         <div class="col-lg-6 col-12 mapDiv">
-                            <img src="./assets/img/map.png" alt="map">
+                            <img src="./assets/img/langing-page/Map 2.png" alt="map">
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
+        <!-- photo gallery  -->
+        <div id="photo-gallery">
+            <div class="container">
+                <div class="row">
+                    <div class="gallery-carousel">
+                        <div v-for="photo in photoGallery">
+                            <img :src="'./assets/img/langing-page/Photos/' + photo" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
         <!-- testimoniasl  -->
 
-        <section id="testimonials">
+        <section id="testimonials" class="clc-gradient p-600-40"> 
+            <div class="container">
+                <div class="row">
+                    <!-- <div class="col-12 text-center">
+                        <h1 class="new-heading bg-ligth" style="margin: 0px;background-color: transparent !important;">Testimonials</h1>
+                    </div> -->
+                    <div class="col-12 testimoni-carousel pb-4 mb-3">
+                        <div class="px-3 std-testimonial d-flex flex-column gap-2 text-center" v-for="test in testimonials">
+                            <div class="std-image ratio ratio-1x1">
+                                <img class="rounded-circle img-fit" :src="'./assets/img/langing-page/Testimonial/' + test.image" :alt="test.student">
+                            </div>
+                            <div class="testimonial-content d-flex flex-column gap-2 text-center">
+                                <div class="fs-6" style="min-height:105px">{{test.content + '"'}}</div>
+                                <p class="fw-bold text-dark mb-0">{{test.student}}</p>
+                                <p class="star-box d-flex gap-2 justify-content-center align-items-center mb-0">
+                                    <i class="fa fa-star fs-5" aria-hidden="true" style="color: #f38e0a;" v-for="replica in 5"></i>
+                                </p>
+                                <p class="mb-0">
+                                    <span v-html="test.rank"></span>
+                                </p>
+                            </div>
+                        </div>
+                       
+                        <!-- <div class="ratio ratio-1x1">
+                            <img class="rounded-1" src="./assets/img/2024/10min.jpg" alt="testiminials">
+                        </div> -->
+                    </div>
+                   
+                </div>
+            </div>
+        </section>
+        <section id="registration" class="py-4">
             <div class="container">
                 <div class="row">
                     <div class="col-12 text-center">
-                        <h1 class="new-heading" style="margin: 0px;">Testimonials</h1>
+                        <p class="clc-page-title">
+                            Hurry Up! <strong>Registration</strong> Open
+                        </p>
                     </div>
-                    <div class="col-12 testimoni-carousel">
-                        <div class="ratio ratio-1x1">
-                            <img class="rounded-1" src="./assets/img/2024/1min.jpg" alt="testiminials">
-                        </div>
-                        <div class="ratio ratio-1x1">
-                            <img class="rounded-1" src="./assets/img/2024/2min.jpg" alt="testiminials">
-                        </div>
-                        <div class="ratio ratio-1x1">
-                            <img class="rounded-1" src="./assets/img/2024/3min.jpg" alt="testiminials">
-                        </div>
-                        <div class="ratio ratio-1x1">
-                            <img class="rounded-1" src="./assets/img/2024/4min.jpg" alt="testiminials">
-                        </div>
-                        <div class="ratio ratio-1x1">
-                            <img class="rounded-1" src="./assets/img/2024/5min.jpg" alt="testiminials">
-                        </div>
-                        <div class="ratio ratio-1x1">
-                            <img class="rounded-1" src="./assets/img/2024/6min.jpg" alt="testiminials">
-                        </div>
-                        <div class="ratio ratio-1x1">
-                            <img class="rounded-1" src="./assets/img/2024/7min.jpg" alt="testiminials">
-                        </div>
-                        <div class="ratio ratio-1x1">
-                            <img class="rounded-1" src="./assets/img/2024/8min.jpg" alt="testiminials">
-                        </div>
-                        <div class="ratio ratio-1x1">
-                            <img class="rounded-1" src="./assets/img/2024/9min.jpg" alt="testiminials">
-                        </div>
-                        <div class="ratio ratio-1x1">
-                            <img class="rounded-1" src="./assets/img/2024/10min.jpg" alt="testiminials">
-                        </div>
-                    </div>
-                    <!-- <div class="w-100 mb-3 d-flex gap-2"> 
-                            <div class="col-md-4 ratio">
-                                <img class="img2 w-100 h-100 ratio ratio-1x1 rounded-1" src="./assets/img/2024/1min.jpg" alt="testiminials">
-                            </div>
-                            <div class="col-md-4 ratio">
-                                <img class="img2 w-100 h-100 ratio ratio-1x1 rounded-1" src="./assets/img/2024/2min.jpg" alt="testiminials">
-                            </div>
-                            <div class="col-md-4 ratio">
-                                <img class="img2 w-100 h-100 ratio ratio-1x1 rounded-1" src="./assets/img/2024/3min.jpg" alt="testiminials">
-                            </div>
-                        </div> -->
+                    <a href="https://clctecno.com/signup" class="text-decoration-none border-0 btn-red px-3 rounded-1 w-auto mx-auto my-3" role="button">Apply For Free</a>
                 </div>
             </div>
         </section>
@@ -1011,21 +1070,7 @@
                                                 <i class="fa fa-whatsapp" aria-hidden="true"></i>
                                             </a>
                                         </li>
-                                        <!-- <li class="ft-soci ft-telegram">
-                                        <a href="" class="text-reset">
-                                            <i class="fa fa-telegram" aria-hidden="true"></i>
-                                        </a>
-                                      </li> -->
-                                        <!-- <li class="ft-soci ft-twitter">
-                                      <a href="" class="text-reset">
-                                          <i class="fa fa-twitter" aria-hidden="true"></i>
-                                      </a>
-                                      </li> -->
-                                        <!-- <li class="ft-soci ft-google">
-                                      <a href="" class="text-reset">
-                                          <i class="fa fa-google" aria-hidden="true"></i>
-                                      </a>
-                                      </li> -->
+                                      
                                     </ul>
                                 </div>
                             </div>
@@ -1049,121 +1094,121 @@
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 
     <script>
-        const zoneWiseList = [
-            {
-                "LIST": "Zone-1",
-                "ZONE": "Sikar (RJ)"
-            },
-            {
-                "LIST": "Zone-2",
-                "ZONE": "Churu (RJ)"
-            },
-            {
-                "LIST": "Zone-3",
-                "ZONE": "Bikaner (RJ)"
-            },
-            {
-                "LIST": "Zone-4",
-                "ZONE": "Nagaur (RJ)"
-            },
-            {
-                "LIST": "Zone-5",
-                "ZONE": "Jhunjhunu (RJ)"
-            },
-            {
-                "LIST": "Zone-6",
-                "ZONE": "Alwar (RJ)"
-            },
-            {
-                "LIST": "Zone-7",
-                "ZONE": "Jaipur (RJ)"
-            },
-            {
-                "LIST": "Zone-8",
-                "ZONE": "Jalore, Pali, Sirohi (RJ)"
-            },
-            {
-                "LIST": "Zone-9",
-                "ZONE": "Barmer, Jaisalmer (RJ)"
-            },
-            {
-                "LIST": "Zone-10",
-                "ZONE": "Jodhpur, Jaisalmer (RJ)"
-            },
-            {
-                "LIST": "Zone-11",
-                "ZONE": "Bhilwara , Ajmer,  Tonk (RJ)"
-            },
-            {
-                "LIST": "Zone-12",
-                "ZONE": "Hanumangarh, Shri Ganganagar (RJ)"
-            },
-            {
-                "LIST": "Zone-13",
-                "ZONE": "Udaipur , Rajsamand,  Chhitorgarh (RJ)"
-            },
-            {
-                "LIST": "Zone-14",
-                "ZONE": "Sawai Madhopur , Dausa,  Karauli (RJ) •  Sheopur, Shivpuri (MP)"
-            },
-            {
-                "LIST": "Zone-15",
-                "ZONE": "Bara , Bundi,  Kota,  Jhalawar (RJ) • Rajgarh (MP) • Guna (MP)"
-            },
-            {
-                "LIST": "Zone-16",
-                "ZONE": "Pratapgarh , Dungarpur , Banswara  (RJ) • Mandsaur, Neemuch, Ratlam,  Ujjain (MP) "
-            },
-            {
-                "LIST": "Zone-17",
-                "ZONE": "Dholpur  (RJ) • Murena, Gwalior (MP)"
-            },
-            {
-                "LIST": "Zone-18",
-                "ZONE": "Bharatpur (RJ)  • Mathura, Agra (UP)"
-            },
-            {
-                "LIST": "Zone-19",
-                "ZONE": "Sirsa , Fatehabad , Hisar , Jind (HR)"
-            },
-            {
-                "LIST": "Zone-20",
-                "ZONE": "Bhiwani , Charkhi Dadri , Jhajjar,  Rohtak,  Sonipat (HR)"
-            },
-            {
-                "LIST": "Zone-21",
-                "ZONE": "Rewari,  Mahendragarh,  Gurugram (HR)"
-            },
-            {
-                "LIST": "Zone-22",
-                "ZONE": "Faridabad,  Nuh , Palwal (HR)"
-            },
-            {
-                "LIST": "Zone-23",
-                "ZONE": "Karnal , Kurukshetra,  Panipat,  Kaithal (HR)"
-            },
-            {
-                "LIST": "Zone-24",
-                "ZONE": "Ambala , Yamuna Nagar , Patiala, Chandigarh, Panchkula (PB)"
-            },
-            {
-                "LIST": "Zone-25",
-                "ZONE": "Mansha, Sangrus,  Bhatindha,  Muksar,  Fajilka,  Faridkot (PB)"
-            },
-            {
-                "LIST": "Zone-26",
-                "ZONE": "Bhind (MP)  • Etawa, Kannauj, Mainpuri,  Lucknow, Firojabad, Eta,  Hathras,  Aligarh (UP)"
-            },
-            {
-                "LIST": "Zone-27",
-                "ZONE": "Bulandshahar, Noida, Gaziabad, Meerat, Bagpath, Mujjafar Nagar, Saharanpur (UP)"
-            },
-            {
-                "LIST": "Zone-28",
-                "ZONE": "Delhi"
-            }
-        ]
-        Vue.filter('formatDate', function (value) {
+         const zoneWiseList=[
+    {
+        "LIST": "Zone-1",
+        "ZONE": "Sikar (RJ)"
+    },
+    {
+        "LIST": "Zone-2",
+        "ZONE": "Churu (RJ)"
+    },
+    {
+        "LIST": "Zone-3",
+        "ZONE": "Bikaner (RJ)"
+    },
+    {
+        "LIST": "Zone-4",
+        "ZONE": "Nagaur (RJ)"
+    },
+    {
+        "LIST": "Zone-5",
+        "ZONE": "Jhunjhunu (RJ)"
+    },
+    {
+        "LIST": "Zone-6",
+        "ZONE": "Alwar (RJ)"
+    },
+    {
+        "LIST": "Zone-7",
+        "ZONE": "Jaipur (RJ)"
+    },
+    {
+        "LIST": "Zone-8",
+        "ZONE": "Jalore, Pali, Sirohi (RJ)"
+    },
+    {
+        "LIST": "Zone-9",
+        "ZONE": "Barmer, Jaisalmer (RJ)"
+    },
+    {
+        "LIST": "Zone-10",
+        "ZONE": "Jodhpur, Jaisalmer (RJ)"
+    },
+    {
+        "LIST": "Zone-11",
+        "ZONE": "Bhilwara , Ajmer,  Tonk (RJ)"
+    },
+    {
+        "LIST": "Zone-12",
+        "ZONE": "Hanumangarh, Shri Ganganagar (RJ)"
+    },
+    {
+        "LIST": "Zone-13",
+        "ZONE": "Udaipur , Rajsamand,  Chhitorgarh (RJ)"
+    },
+    {
+        "LIST": "Zone-14",
+        "ZONE": "Sawai Madhopur , Dausa,  Karauli (RJ) •  Sheopur, Shivpuri (MP)"
+    },
+    {
+        "LIST": "Zone-15",
+        "ZONE": "Bara , Bundi,  Kota,  Jhalawar (RJ) • Rajgarh (MP) • Guna (MP)"
+    },
+    {
+        "LIST": "Zone-16",
+        "ZONE": "Pratapgarh , Dungarpur , Banswara  (RJ) • Mandsaur, Neemuch, Ratlam,  Ujjain (MP) "
+    },
+    {
+        "LIST": "Zone-17",
+        "ZONE": "Dholpur  (RJ) • Murena, Gwalior (MP)"
+    },
+    {
+        "LIST": "Zone-18",
+        "ZONE": "Bharatpur (RJ)  • Mathura, Agra (UP)"
+    },
+    {
+        "LIST": "Zone-19",
+        "ZONE": "Sirsa , Fatehabad , Hisar , Jind (HR)"
+    },
+    {
+        "LIST": "Zone-20",
+        "ZONE": "Bhiwani , Charkhi Dadri , Jhajjar,  Rohtak,  Sonipat (HR)"
+    },
+    {
+        "LIST": "Zone-21",
+        "ZONE": "Rewari,  Mahendragarh,  Gurugram (HR)"
+    },
+    {
+        "LIST": "Zone-22",
+        "ZONE": "Faridabad,  Nuh , Palwal (HR)"
+    },
+    {
+        "LIST": "Zone-23",
+        "ZONE": "Karnal , Kurukshetra,  Panipat,  Kaithal (HR)"
+    },
+    {
+        "LIST": "Zone-24",
+        "ZONE": "Ambala , Yamuna Nagar , Patiala, Chandigarh, Panchkula (PB)"
+    },
+    {
+        "LIST": "Zone-25",
+        "ZONE": "Mansha, Sangrus,  Bhatindha,  Muksar,  Fajilka,  Faridkot (PB)"
+    },
+    {
+        "LIST": "Zone-26",
+        "ZONE": "Bhind (MP)  • Etawa, Kannauj, Mainpuri,  Lucknow, Firojabad, Eta,  Hathras,  Aligarh (UP)"
+    },
+    {
+        "LIST": "Zone-27",
+        "ZONE": "Bulandshahar, Noida, Gaziabad, Meerat, Bagpath, Mujjafar Nagar, Saharanpur (UP)"
+    },
+    {
+        "LIST": "Zone-28",
+        "ZONE": "Delhi"
+    }
+] 
+          Vue.filter('formatDate', function (value) {
             if (value) {
                 return moment(String(value)).format('DD MMM, YYYY')
                 console.log(value);
@@ -1191,29 +1236,6 @@
                 loggedIn: '',
                 notLoggedIn: '',
                 userData: [],
-                videoList: [
-                    {
-                        id: 0,
-                        url: 'KewpGLmX9Sk',
-                        bgImg: 'https://i.ytimg.com/vi/KewpGLmX9Sk/sddefault.jpg'
-                    },
-                    {
-                        id: 1,
-                        url: 'kSKzIgAsx-g',
-                        bgImg: 'https://i.ytimg.com/vi/KewpGLmX9Sk/sddefault.jpg'
-                    },
-                    {
-                        id: 3,
-                        url: 'x04ynzf5sCs',
-                        bgImg: 'https://i.ytimg.com/vi/KewpGLmX9Sk/sddefault.jpg'
-                    }
-                ],
-
-                demoV_Id: {
-                    id: '',
-                    title: '',
-                    loader: false,
-                },
                 videoModel: '',
                 ABOUT_EXAM: [
                     {
@@ -1241,7 +1263,76 @@
                     { id: 6, class: "Class XI", url: "/class-xi", img: "https://www.tallentex.com/assets/images/category/category-04/category-02.png" },
                     { id: 7, class: "Class XII", url: "/class-xii", img: "https://www.tallentex.com/assets/images/category/category-04/category-02.png" },
                 ],
-                zoneWiseList: zoneWiseList || [],
+               zoneWiseList: zoneWiseList || [],
+               photoGallery: ["0N4A0088.JPG", "0N4A0093.JPG", "0N4A0098.JPG", "0N4A0107.JPG", "0N4A0110.JPG", "0N4A0383.JPG", "0N4A0387.JPG", "0N4A7197.JPG", "0N4A7220.JPG", "0N4A7223.JPG", "0N4A7230.JPG", "0N4A7308.JPG", "CLC86805.JPG", "CLC86839.JPG", "CLC86881.JPG", "CLC86971.JPG", "CLC86985.JPG", "CLC86999.JPG",    "CLC87011.JPG",    "CLC87081.JPG",    "CLC87117.JPG",    "CLC87189.JPG",    "DSC04780.JPG"],
+                testimonials : [
+                        {
+                            "image": "Dev Raj Yadav.png",
+                            "content": "Joining TECNO was a turning point in my academic journey; it gave me the confidence to aim higher and achieve my goals.",
+                            "student": "Dev Raj Yadav",
+                            "rank": "Overall Rank - 2, Tecno'23<br>AIR-329, NEET (UG)-2023"
+                        },
+                        {
+                            "image": "Sourabh Garhwal.png",
+                            "content": "TECNO's focus on critical thinking and problem-solving skills helped me approach questions with a strategic mindset.",
+                            "student": "Sourabh Garhwal",
+                            "rank": "Overall Rank - 45, Tecno'23<br>AIR-2073, NEET (UG)-2023"
+                        },
+                        {
+                            "image": "Hiteshi Fogat.png",
+                            "content": "I am immensely thankful to TECNO for helping me realize my true potential and guiding me towards success.",
+                            "student": "Hiteshi Fogat",
+                            "rank": "Overall Rank - 9, Tecno'23<br>AIR-2344, NEET (UG)-2023"
+                        },
+                        {
+                            "image": "Lokesh.png",
+                            "content": "The recognition and opportunities provided by TECNO have opened doors to new possibilities in my academic journey.",
+                            "student": "Lokesh",
+                            "rank": "Overall Rank - 20, Tecno'23<br>AIR-3552, NEET (UG)-2023"
+                        },
+                        {
+                            "image": "Abhinav Mittal.png",
+                            "content": "TECNO taught me the importance of discipline, hard work, and perseverance in achieving academic excellence.",
+                            "student": "Abhinav Mittal",
+                            "rank": "Overall Rank - 11, Tecno'23<br>AIR-4729, NEET (UG)-2023"
+                        },
+                        {
+                            "image": "Jayant Mitawa.png",
+                            "content": "TECNO's comprehensive study material and experienced faculty played a vital role in my achievements.",
+                            "student": "Jayant Mitawa",
+                            "rank": "Overall Rank - 19, Tecno'23<br>AIR-845, JEE (Adv.)-2023"
+                        },
+                        {
+                            "image": "Harsh Yadav.png",
+                            "content": "TECNO's challenging curriculum and tough competition prepared me to face any academic challenge that came my way.",
+                            "student": "Harsh Yadav",
+                            "rank": "Overall Rank - 24, Tecno'23<br>State Rank-3, STSE-2022"
+                        },
+                        {
+                            "image": "Rakeshit Rulaniya.png",
+                            "content": "TECNO's personalized approach and expert mentoring helped me improve my weak areas and excel in my strong subjects.",
+                            "student": "Rakeshit Rulaniya",
+                            "rank": "Overall Rank - 41, Tecno'23<br>State Rank-6, STSE-2022"
+                        },
+                        {
+                            "image": "Rakeshit Rulaniya.png",
+                            "content": "TECNO's personalized approach and expert mentoring helped me improve my weak areas and excel in my strong subjects.",
+                            "student": "Rakeshit Rulaniya",
+                            "rank": "Overall Rank - 41, Tecno'23<br>State Rank-6, STSE-2022"
+                        },
+                        {
+                            "image": "Nishant Fogat.png",
+                            "content": "TECNO's mock tests and practice papers prepared me well for the actual exam, giving me an edge over my competitors.",
+                            "student": "Nishant Fogat",
+                            "rank": "Overall Rank - 80, Tecno'23<br>State Rank-8, STSE-2022"
+                        },
+                        {
+                            "image": "Aman Kumar.png",
+                            "content": "The comprehensive syllabus and quality study material provided by TECNO played a crucial role in my success.",
+                            "student": "Aman Kumar",
+                            "rank": "Overall Rank - 51, Tecno'23<br>State Rank-13, STSE-2022"
+                        }
+                    ],
             },
             methods: {
                 // loadPopup: function(){
@@ -1281,43 +1372,13 @@
                         })
                         .catch(error => console.log(error))
                 },
-                displayDemo: function (id, title) {
-                    console.log(id)
-                    this.demoV_Id.id = id;
-                    this.demoV_Id.title = title;
-                    const self = this;
-                    const videoSRCauto = 'https://www.youtube.com/embed/' + id + '?ref=0&autoplay=1'
-                    $('.course-slider-active-3').slick('slickPause');
-                    $('#demoVideoModal iframe').attr('src', videoSRCauto);
-
-                    $("#demoVideoModal").on('show.bs.modal', function (e) {
-                        self.demoV_Id.loader = true;
-                        console.log(self.demoV_Id.loader);
-                    })
-                },
-                closeDemo: function () {
-                    this.demoV_Id.id = '';
-                    this.demoV_Id.title = '';
-                    $("#demoVideoModal").on('hide.bs.modal', function (e) {
-                        $("#demoVideoModal iframe").attr("src", $("#demoVideoModal iframe").attr("src"));
-                        $('.course-slider-active-3').slick('slickPlay');
-                        $('#demoVideoModal iframe').removeAttr('src');
-                    });
-                    var myModalEl = document.getElementById('demoVideoModal')
-                    myModalEl.addEventListener('hidden.bs.modal', function (event) {
-                        $('#demoVideoModal iframe').removeAttr('src')
-                    })
-                    // $('#demoVideoModal').on('hidden.bs.modal', function () {
-                    // 	$('#demoVideoModal iframe').removeAttr('src');
-                    // })
-
-                },
-                loadcourse: function () {
+               
+                loadGallery: function () {
                     setTimeout(function () {
-                        $(".course-carosole").slick({
+                        $(".gallery-carousel").slick({
                             slidesToShow: 4,
                             slidesToScroll: 1,
-                            autoplay: true,
+                            autoplay: false,
                             nav: true,
                             dots: false,
                             autoplaySpeed: 3000,
@@ -1329,7 +1390,7 @@
                                     settings: {
 
                                         // centerPadding: '40px',
-                                        slidesToShow: 3
+                                        slidesToShow: 4
                                     }
                                 },
                                 {
@@ -1337,7 +1398,7 @@
                                     settings: {
 
                                         // centerPadding: '40px',
-                                        slidesToShow: 2
+                                        slidesToShow: 3
                                     }
                                 },
                                 {
@@ -1345,7 +1406,7 @@
                                     settings: {
 
                                         // centerPadding: '40px',
-                                        slidesToShow: 1
+                                        slidesToShow: 3
                                     }
                                 }
                             ]
@@ -1404,7 +1465,8 @@
                     this.collapseCenters3 = false
 
                 }
-                this.loadcourse();
+                this.loadGallery();
+                this.loadTestimonials()
                 this.loadFaqs();
                 let user = localStorage.getItem('user');
                 if (user) {
@@ -1413,7 +1475,7 @@
                         this.loggedIn = true;
                     }
                 }
-                this.loadTestimonials()
+                
             },
 
         });
