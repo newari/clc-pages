@@ -834,7 +834,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-lg-6 col-12 mapDiv">
+                        <div class="col-lg-6 col-12 mapDiv text-lg-start text-center">
                             <img src="./assets/img/langing-page/Map 2.png" alt="map">
                         </div>
                     </div>
@@ -868,7 +868,7 @@
                                 <img class="rounded-circle img-fit" :src="'./assets/img/langing-page/Testimonial/' + test.image" :alt="test.student">
                             </div>
                             <div class="testimonial-content d-flex flex-column gap-2 text-center">
-                                <div class="fs-6" style="min-height:105px">{{test.content + '"'}}</div>
+                                <div class="testimonial-text" style="min-height:105px; font-size: clamp(13.33px, .6rem + 1vw ,30px)">{{test.content + '"'}}</div>
                                 <p class="fw-bold text-dark mb-0">{{test.student}}</p>
                                 <p class="star-box d-flex gap-2 justify-content-center align-items-center mb-0">
                                     <i class="fa fa-star fs-5" aria-hidden="true" style="color: #f38e0a;" v-for="replica in 5"></i>
@@ -1394,7 +1394,7 @@
                                     }
                                 },
                                 {
-                                    breakpoint: 625,
+                                    breakpoint: 768,
                                     settings: {
 
                                         // centerPadding: '40px',
@@ -1431,13 +1431,13 @@
                                     }
                                 },
                                 {
-                                    breakpoint: 625,
+                                    breakpoint: 768,
                                     settings: {
                                         slidesToShow: 2
                                     }
                                 },
                                 {
-                                    breakpoint: 375,
+                                    breakpoint: 495,
                                     settings: {
                                         slidesToShow: 1
                                     }
