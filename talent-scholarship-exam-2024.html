@@ -647,6 +647,7 @@
                 height: 230px;
                 /* padding: 0.5rem; */
                 /* object-fit: cover; */
+                margin: auto
             }
         div#photo-gallery span.b-navigation.b-navigation-prev.slick-arrow, div#photo-gallery span.b-navigation.b-navigation-next.active.slick-arrow {
             top: 50%;
@@ -659,6 +660,13 @@
         div#photo-gallery span.b-navigation.b-navigation-next.active.slick-arrow {     
             left: calc(100% - 50px);
         }
+        .slick-arrow i.fa.fa-angle-right, .slick-arrow i.fa.fa-angle-left {
+            width: 30px;
+            height: 30px;
+            color: #fff;
+            background-color: #3870C2;
+            font-size: 29px;
+        }
         div#photo-gallery .slick-arrow i.fa.fa-angle-right, div#photo-gallery .slick-arrow i.fa.fa-angle-left{
             transform: none;
         }
@@ -668,10 +676,14 @@
         .clc-gradient {
             background-image: linear-gradient(74deg, #fef3e7 27%, #fdfcff 52%, #f5f4fe 100%) !important
         }
-        section#testimonials {
+        section#testimonials-block {
             padding-top: 118px;
+            padding-bottom: 52px;
         }
-       
+        .testimoni-carousel {
+            padding-bottom: 72px;
+            margin-bottom: 30px;
+        }
         .std-testimonial .std-image{
             width: 118px;
             margin: auto;
@@ -693,6 +705,9 @@
         }
         .btn-apply {
             margin-top: 0 !important;
+        }
+        .btn-apply:hover {
+            color:#fff !important;
         }
     </style>
 
@@ -1016,13 +1031,13 @@
         </div>
         <!-- testimoniasl  -->
 
-        <section id="testimonials" class="clc-gradient"> 
+        <section id="testimonials-block" class="clc-gradient"> 
             <div class="container">
                 <div class="row ">
                     <!-- <div class="col-12 text-center">
                         <h1 class="new-heading bg-ligth" style="margin: 0px;background-color: transparent !important;">Testimonials</h1>
                     </div> -->
-                    <div class="col-12 testimoni-carousel pb-4 mb-3">
+                    <div class="col-12 testimoni-carousel">
                         <div class="px-3 std-testimonial d-flex flex-column text-center" v-for="test in testimonials">
                             <div class="std-image ratio ratio-1x1">
                                 <img class="rounded-circle img-fit" :src="'./assets/img/langing-page/Testimonial/' + test.image" :alt="test.student">
@@ -1247,120 +1262,6 @@
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 
     <script>
-         const zoneWiseList=[
-    {
-        "LIST": "Zone-1",
-        "ZONE": "Sikar (RJ)"
-    },
-    {
-        "LIST": "Zone-2",
-        "ZONE": "Churu (RJ)"
-    },
-    {
-        "LIST": "Zone-3",
-        "ZONE": "Bikaner (RJ)"
-    },
-    {
-        "LIST": "Zone-4",
-        "ZONE": "Nagaur (RJ)"
-    },
-    {
-        "LIST": "Zone-5",
-        "ZONE": "Jhunjhunu (RJ)"
-    },
-    {
-        "LIST": "Zone-6",
-        "ZONE": "Alwar (RJ)"
-    },
-    {
-        "LIST": "Zone-7",
-        "ZONE": "Jaipur (RJ)"
-    },
-    {
-        "LIST": "Zone-8",
-        "ZONE": "Jalore, Pali, Sirohi (RJ)"
-    },
-    {
-        "LIST": "Zone-9",
-        "ZONE": "Barmer, Jaisalmer (RJ)"
-    },
-    {
-        "LIST": "Zone-10",
-        "ZONE": "Jodhpur, Jaisalmer (RJ)"
-    },
-    {
-        "LIST": "Zone-11",
-        "ZONE": "Bhilwara , Ajmer,  Tonk (RJ)"
-    },
-    {
-        "LIST": "Zone-12",
-        "ZONE": "Hanumangarh, Shri Ganganagar (RJ)"
-    },
-    {
-        "LIST": "Zone-13",
-        "ZONE": "Udaipur , Rajsamand,  Chhitorgarh (RJ)"
-    },
-    {
-        "LIST": "Zone-14",
-        "ZONE": "Sawai Madhopur , Dausa,  Karauli (RJ) •  Sheopur, Shivpuri (MP)"
-    },
-    {
-        "LIST": "Zone-15",
-        "ZONE": "Bara , Bundi,  Kota,  Jhalawar (RJ) • Rajgarh (MP) • Guna (MP)"
-    },
-    {
-        "LIST": "Zone-16",
-        "ZONE": "Pratapgarh , Dungarpur , Banswara  (RJ) • Mandsaur, Neemuch, Ratlam,  Ujjain (MP) "
-    },
-    {
-        "LIST": "Zone-17",
-        "ZONE": "Dholpur  (RJ) • Murena, Gwalior (MP)"
-    },
-    {
-        "LIST": "Zone-18",
-        "ZONE": "Bharatpur (RJ)  • Mathura, Agra (UP)"
-    },
-    {
-        "LIST": "Zone-19",
-        "ZONE": "Sirsa , Fatehabad , Hisar , Jind (HR)"
-    },
-    {
-        "LIST": "Zone-20",
-        "ZONE": "Bhiwani , Charkhi Dadri , Jhajjar,  Rohtak,  Sonipat (HR)"
-    },
-    {
-        "LIST": "Zone-21",
-        "ZONE": "Rewari,  Mahendragarh,  Gurugram (HR)"
-    },
-    {
-        "LIST": "Zone-22",
-        "ZONE": "Faridabad,  Nuh , Palwal (HR)"
-    },
-    {
-        "LIST": "Zone-23",
-        "ZONE": "Karnal , Kurukshetra,  Panipat,  Kaithal (HR)"
-    },
-    {
-        "LIST": "Zone-24",
-        "ZONE": "Ambala , Yamuna Nagar , Patiala, Chandigarh, Panchkula (PB)"
-    },
-    {
-        "LIST": "Zone-25",
-        "ZONE": "Mansha, Sangrus,  Bhatindha,  Muksar,  Fajilka,  Faridkot (PB)"
-    },
-    {
-        "LIST": "Zone-26",
-        "ZONE": "Bhind (MP)  • Etawa, Kannauj, Mainpuri,  Lucknow, Firojabad, Eta,  Hathras,  Aligarh (UP)"
-    },
-    {
-        "LIST": "Zone-27",
-        "ZONE": "Bulandshahar, Noida, Gaziabad, Meerat, Bagpath, Mujjafar Nagar, Saharanpur (UP)"
-    },
-    {
-        "LIST": "Zone-28",
-        "ZONE": "Delhi"
-    }
-] 
           Vue.filter('formatDate', function (value) {
             if (value) {
                 return moment(String(value)).format('DD MMM, YYYY')
@@ -1416,7 +1317,7 @@
                     { id: 6, class: "Class XI", url: "/class-xi", img: "https://www.tallentex.com/assets/images/category/category-04/category-02.png" },
                     { id: 7, class: "Class XII", url: "/class-xii", img: "https://www.tallentex.com/assets/images/category/category-04/category-02.png" },
                 ],
-               zoneWiseList: zoneWiseList || [],
+              // zoneWiseList: zoneWiseList || [],
                photoGallery: ["0N4A0088.JPG", "0N4A0093.JPG", "0N4A0098.JPG", "0N4A0107.JPG", "0N4A0110.JPG", "0N4A0383.JPG", "0N4A0387.JPG", "0N4A7197.JPG", "0N4A7220.JPG", "0N4A7223.JPG", "0N4A7230.JPG", "0N4A7308.JPG", "CLC86805.JPG", "CLC86839.JPG", "CLC86881.JPG", "CLC86971.JPG", "CLC86985.JPG", "CLC86999.JPG",    "CLC87011.JPG",    "CLC87081.JPG",    "CLC87117.JPG",    "CLC87189.JPG",    "DSC04780.JPG"],
                 testimonials : [
                         {
@@ -1426,7 +1327,7 @@
                             "rank": "Overall Rank - 2, Tecno'23<br>AIR-329, NEET (UG)-2023"
                         },
                         {
-                            "image": "Sourabh Garhwal.png",
+                            "image": "Sourabh garhwal.png",
                             "content": "TECNO's focus on critical thinking and problem-solving skills helped me approach questions with a strategic mindset.",
                             "student": "Sourabh Garhwal",
                             "rank": "Overall Rank - 45, Tecno'23<br>AIR-2073, NEET (UG)-2023"
@@ -1565,6 +1466,7 @@
                 loadTestimonials: function () {
                     setTimeout(function () {
                         $(".testimoni-carousel").slick({
+                           // lazyLoad: 'ondemand',
                             slidesToShow: 3,
                             slidesToScroll: 1,
                             autoplay: true,
