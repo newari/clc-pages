@@ -24,10 +24,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="shortcut icon" type="image/x-icon" href="">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&family=Poppins:ital,wght@0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,600;1,700;1,800&display=swap" rel="stylesheet">
+
     <link
         href="https://fonts.googleapis.com/css2?family=Noto+Sans+Display:ital,wght@0,100;0,400;0,500;0,600;0,700;0,800;1,400&display=swap"
         rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
 
     <!-- google fonts  -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -106,6 +109,25 @@
     </title>
 
     <style>
+        body{
+            font-family: 'Poppins';
+        }
+        .pb-43{
+            padding-bottom: 43px !important;
+        }
+        .pt-54{
+            padding-top: 54px !important
+        }
+        p{
+            margin-bottom: 0;
+        }
+    
+        .para{
+            font-size: 18px;
+            line-height: 25px;
+            margin-bottom:0;
+            font-family: 'Poppins';
+        }
         @media only screen and (max-width: 992px) {
             #Radiant p {
                 margin: auto;
@@ -136,8 +158,8 @@
         }
 
         #new-herosection .heroDiv img {
-            width: 20%;
-            height: auto;
+            width: auto;
+            height: 71px;
         }
 
         #new-herosection .IndiaBiggest {
@@ -148,17 +170,45 @@
             font-size: 49px;
             color: #000;
             font-weight: 600;
+            margin-bottom: 0;
+            font-family: 'Montserrat';
         }
 
         #new-herosection .IndiaBiggest h2 {
             font-weight: 700;
             color: #3870c2;
-            font-size: 55px;
+            font-size: 62px;
+            font-family: 'Montserrat';
+            margin-bottom: 0;
         }
-
+        .fs-25{
+            font-size: 25px;
+        }
+        #new-herosection p.hero-title{
+            font-weight: 500;
+            letter-spacing: 0px;
+            color: #A73941;
+            line-height: 1.4;
+        }
+        .IndiaBiggestUPTO {
+            padding-left: 40px;
+            position: relative;
+            margin-top: 56px;
+            margin-bottom: 46px;
+        }
+        #new-herosection .IndiaBiggest .IndiaBiggestUPTO::before {
+            content: '';
+            width: 16px;
+            height: 45px;
+            display: block;
+            background: #d1ccf6;
+            position: absolute;
+            left: 0;
+        }
         #new-herosection .IndiaBiggest .IndiaBiggest-img img {
-            width: 50%;
+            width: clamp(280px, 90%, 620px);
             height: auto;
+            aspect-ratio: 620/200;
         }
 
         @media only screen and (max-width: 600px) {
@@ -171,15 +221,7 @@
             }
         }
 
-        #new-herosection .IndiaBiggest .IndiaBiggestUPTO::before {
-            content: '';
-            width: 6px;
-            height: 45px;
-            display: block;
-            background: #d1ccf6;
-            position: absolute;
-
-        }
+        
 
         /* #new-herosection .IndiaBiggest .beforeLine::before{
             content: '';
@@ -195,53 +237,71 @@
         #new-herosection .newRegis {
             background: #3870c2;
             border-radius: 20px;
-            padding: 30px;
+            padding: 78px 42px;
+            width: 424px;
+            aspect-ratio: 424/500;
         }
 
         #new-herosection .newRegis h4 {
-            color: #ffe600;
+            color: #FFE600;
             text-align: center;
-            margin-bottom: 20px;
-            font-size: large;
+            margin-bottom: 26px;
+            font-size: 30px;
+            font-weight: 700;
         }
 
         #new-herosection .inputField {
             border-radius: 7px;
-            width: 300px;
-            height: 41px;
+            width: 100%;
+            height: 60px;
             border: none;
             max-width: 100%;
-            padding: 2px 15px;
+            padding: 19px 29px 19px;
+            
         }
-
         #new-herosection .checkbox-div {
-            padding-top: 20px;
+            padding-block: 31px;
+            padding-inline: 10px;
             color: #fff;
         }
-
-        input[type=checkbox] {
-            accent-color: #3870c2;
-        }
-
         #new-herosection .Authorize {
             display: flex;
             justify-content: flex-start;
-            align-items: baseline;
-            gap: 9px;
+            align-items: start;
         }
-
+        #new-herosection input[type=checkbox] {
+            accent-color: #3870c2;
+            width: 20px;
+            height: 20px;
+            margin-right: 16px;
+            outline: 2px solid #3870c2;
+        }
+        #new-herosection input[type=checkbox]:checked{
+            outline: 2px solid #fff;
+        }
+        #new-herosection label {
+            display: inline-block;
+            width: calc(100% - 36px);
+            font-size: 16px;
+            font-family: 'Poppins';
+        }
         #new-herosection .btndiv {
             text-align: center;
-            margin-top: 23px;
+            /* margin-top: 23px; */
         }
 
         #new-herosection .btndiv button {
-            padding: 7px 101px;
-            border-radius: 10px;
+            padding: 12px;
             border: none;
             background: #feefdf;
-            display: block;
+            display: flex;
             width: 100%;
+            height: 45px;
+            border-radius: 8px;
+            font-size: 18px;
+            font-family: 'Poppins';
+            align-items: center;
+            justify-content: center;
         }
 
         @media only screen and (max-width:600px) {
@@ -267,67 +327,104 @@
             }
         }
 
-
+       
         #citySection .city {
-            padding-block: 1rem;
+            padding-block: 17px;
             text-align: center;
             background: #a73941;
-            /* height: 30px; */
         }
 
         #citySection .city p {
             color: #fff;
-            height: 30px;
+            height: 86px;
             margin: 0px;
             display: flex;
             justify-content: center;
             align-items: center;
             word-spacing: 12px;
-            font-size: 19px;
+            font-size: 37px;
         }
-
-        #examInformation {
-            padding-top: 40px;
+        section#examInformation {
+            font-family: 'Poppins';
+        }
+        #examInformation .whoCan {
+            margin-bottom: 69px;
+            line-height: 37px;
         }
 
         #examInformation .whoCan p {
-            font-size: clamp(23px, 1rem + 1.8vw, 2.5rem);
             font-weight: 500;
             color: #3870c2;
+            margin-bottom: 34px;
+            font-size: 42px;
+            font-family: "Poppins";
         }
-
+      
         #examInformation .whoCan h5 {
-            font-size: 16px;
+            font-size: 22px;
             font-weight: 600;
             color: rgb(0, 0, 0);
         }
-
-        #examInformation .whoCan {
-            margin-bottom: 40px;
+        #examInformation .whoCan h4 {
+            font-size: 36px;
+            font-weight: 600;
+            color: rgb(0, 0, 0);
         }
-
-        #examInformation .examDate {
+        #examInformation .whoCan>span {
+            font-size: 22px;
+        }
+        .examInfoBox p {
+            font-size: 42px;
+            color: rgb(56, 112, 194);
+            font-weight: 500;
+            margin-bottom: 0
+        }
+        .examDate.row {
+            padding-block: 34px;
+        }
+        /* #examInformation .examDate {
             padding-top: 20px;
-        }
+        } */
 
         #examInformation .examDateicon {
             display: flex;
             justify-content: flex-start;
             align-items: flex-start;
-            gap: 10px;
+            gap: 20px;
         }
 
         #examInformation .examDateicon h6 {
             margin: 0;
+            font-weight: 700;
+            font-size: 18px;
+            line-height: 37px;
+            text-wrap: nowrap;
         }
-
-        #examInformation .examDateicon i {
+        #examInformation .examDateicon p{
+            font-weight: 400;
+            font-size: 18px;
+            line-height: 22px;
+        }
+        /* #examInformation .examDateicon i {
             font-size: 27px;
             color: #3870c2;
+        } */
+        .examDate img.icons {
+            width: clamp(2rem, 17%, 53px);
+            aspect-ratio: 1;
+            object-fit: fill;
+            margin-top: 6px;
         }
-
+        #examInformation .examImg{
+            overflow:hidden;
+        }
         #examInformation .examImg img {
-            height: 531px;
+            width: 120%;
+            max-width: 660px;
+            margin-top: auto;
+            aspect-ratio: 660/630;
+            position: relative;
+            left: -40px;
         }
 
         @media only screen and (max-width:600px) {
@@ -348,23 +445,29 @@
                 margin-bottom: 20px;
             }
         }
-        #howToRegis {
+        /* #howToRegis {
                 padding: 40px 0px 0;
-        }
-
+        } */
         #howToRegis .howRegis {
             background: #dcebff;
-            padding: 10px;
-            margin: 40px 0px;
+            padding: 18px 30px;
+            /* margin: 40px 0px; */
             border-radius: 10px;
-            height: 95px;
-            position: relative
+            position: relative;
+            max-width: 304px;
         }
 
         #howToRegis .howRegis h4 {
-            font-weight: 600;
+            font-weight: bold;
             color: #000;
-            font-size: 16px;
+            font-size: 18px;
+            line-height: 37px;
+            margin-bottom: 0;
+        }
+        #howToRegis .howRegis p {
+            font-size: 18px;
+            line-height: 25px;
+            margin: 0;
         }
 
         #howToRegis .howRegis span::after {
@@ -374,20 +477,37 @@
             height: 0px;
             border: 1px dashed #3b72c3;
             position: absolute;
-            top: 41px;
+            top: 50%;
             transform: translate(100%, 0%);
             right: 0;
         }
-
+        .beneficial {
+            margin-top: 79px;
+        }
         #howToRegis .beneficial p {
-            font-size: clamp(23px, 1rem + 1.8vw, 2.5rem);
+            /* font-size: clamp(23px, 1rem + 1.8vw, 2.5rem); */
+            font-size: 42px;
             font-weight: 600;
             color: #3b72c3;
         }
-
+        #howToRegis .beneficial ul{
+            display: flex;
+            font-size: 18px;
+            line-height: 37px;
+            flex-direction: column;
+            padding: 0;
+            list-style:none;
+            gap: 41px;
+            font-family: 'Poppins';
+        }
         #howToRegis .beneficial ul li {
-            padding-bottom: 20px;
+            /* padding-bottom: 20px; */
             list-style: none;
+        }
+        #howToRegis .beneficial ul h5{
+            font-weight: bold;
+            line-height: 37px;
+            margin-bottom: 0;
         }
         .p-600-40{
             padding-top: 40px;
@@ -415,22 +535,35 @@
             text-decoration: none;
         }
         .clc-page-title{
-            font-size: clamp(23px, 1rem + 1.8vw, 2.5rem);
+            /* font-size: clamp(23px, 1rem + 1.8vw, 2.5rem); */
+            font-size: 42px;
             color: #3870c2;font-weight: 500;
-            margin: 0px;
+            margin-bottom: 24px;
+            line-height: 57px;
         }
-
-        #Syllabus .Syllabusbtn, .btn-red {
+        .Syllabusbtn-wrapper{
+            padding-top: 41px;
+            display: flex;
+            flex-wrap: wrap;
+            /* row-gap: 38px; */
+            column-gap: 61px;
+        }
+        .Syllabusbtn-wrapper .col-auto{
+            min-width: 177px;
+        }
+        #Syllabus .Syllabusbtn, .btn-apply {
             display: flex;
             background: #a73941;
             justify-content: flex-start;
             align-items: center;
             gap: 20px;
-            padding: 10px;
-            width: 60%;
+            padding: 8px 15px;
             border-radius: 10px;
+            font-size: 25px;
+            line-height: 31px;
+            
             /* margin: 0px auto; */
-            margin-bottom: 20px;
+            margin-bottom: 38px;
             color: #fff;
         }
         
@@ -446,67 +579,75 @@
             }
         }
 
-        #states {
-            margin: 50px 0px;
-        }
-
+        
         #states p span {
-            font-size: 25px;
+            font-size: 49px;
             color: #a73941;
-            font-weight: 600;
-            margin-right: 0px;
+            font-weight: bold;
+            line-height: 67px;
         }
 
         #states .statesdiv p {
-            font-size: 20px;
-            font-weight: 600;
+            font-size: 34px;
+            font-weight: normal;
             color: #3870c2;
+            display: flex;
+            align-items: baseline;
+            gap: 12px;
+            line-height: 67px;
+            border-bottom: 2px solid #deecff;
         }
 
         #states .speardacross {
             color: #000;
-            font-size: 27px;
-            font-weight: 600;
+            font-size: 30px;
+            font-weight: normal;
+            line-height: 65px;
         }
 
         ::placeholder {
             padding: 10px;
         }
-
+        .mapDiv {
+            position: relative;
+            overflow: hidden;
+            height: 473px;
+        }           
         #states .mapDiv img {
-            width: 70%;
+            width: 730px;
+            height: 691px;
+            aspect-ratio: 730/691;
+            position: absolute;
+            top: 0;
+            object-fit: contain;
+            left: 0;
+            right: 0;
+            bottom: 0;
         }
-
         @media only screen and (max-width:600px) {
             #states .mapDiv img {
                 width: 100%;
             }
-            div#photo-gallery{
-                padding-block: .5rem !important
-            }
+           
             #states {
                 margin: 30px 0px;
             }
         }
-        section#new-herosection {
-            padding-bottom: clamp(1.5rem, 1.5rem + 1.5vw, 50px);
-        }
-        .examDate img.icons {
-            width: clamp(2rem, 12%, 40px);
-            aspect-ratio: 1;
-            object-fit: fill;
-        }
+   
         div#photo-gallery {
             background-color: #22438a;
-            padding-block: 1.5rem;
+            padding-block: 41px 3rem;
+        }
+        div#photo-gallery .row{
+            padding-inline: 30px
         }
         div#photo-gallery img {
-            aspect-ratio: 16/12;
-            object-fit: initial;
-            width: 100%;
-            height: 100%;
-            padding: 0.5rem;
-        }
+                /* aspect-ratio: 195/230; */
+                width: 195px;
+                height: 230px;
+                /* padding: 0.5rem; */
+                /* object-fit: cover; */
+            }
         div#photo-gallery span.b-navigation.b-navigation-prev.slick-arrow, div#photo-gallery span.b-navigation.b-navigation-next.active.slick-arrow {
             top: 50%;
             transform: translate(0.5rem, -57%);
@@ -527,13 +668,31 @@
         .clc-gradient {
             background-image: linear-gradient(74deg, #fef3e7 27%, #fdfcff 52%, #f5f4fe 100%) !important
         }
+        section#testimonials {
+            padding-top: 118px;
+        }
+       
         .std-testimonial .std-image{
-            width: clamp(100px, 60%, 120px);
+            width: 118px;
             margin: auto;
         }
         .std-testimonial .std-image img{
             padding: 1px;
             background-color: #4871c8;
+        }
+        .std-testimonial{
+            gap: 17px
+        }
+        .testimonial-content{
+            gap: 13.33px;
+        }
+        .testimonial-text{
+            width: 334px;
+            text-align: unset;
+            min-height: 100px;
+        }
+        .btn-apply {
+            margin-top: 0 !important;
         }
     </style>
 
@@ -545,7 +704,7 @@
     <div id="app" v-cloak>
         <!-- menubar  -->
         <!-- herosection -->
-        <section id="new-herosection" class="clc-gradient">
+        <section id="new-herosection" class="clc-gradient pt-54 pb-43">
             <div class="container">
                 <div class="row">
                     <div class="col-12">
@@ -553,11 +712,11 @@
                             <img class="heroimg" src="./assets/img/langing-page/Logo.png" alt="logo">
                         </div>
                     </div>
-                    <div class="col-12 col-lg-8 IndiaBiggest">
+                    <div class="col-12 col-lg-7 IndiaBiggest">
                         <div>
                             <h5>India's Biggest</h5>
                             <h2>Talent Hunt Exam</h2>
-                            <p style="color: #b25057;font-weight: 500;">Talent Exploring CLC <br> National Olympaid 2024
+                            <p class="fs-25 hero-title" >Talent Exploring CLC <br> National Olympaid 2024
                             </p>
                             <div class="IndiaBiggestUPTO">
                                 <h4 style="font-weight: 700;padding-left: 15px;" class="newbefore">
@@ -573,7 +732,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-12 col-lg-4 newRegiscol">
+                    <div class="col-12 col-lg-5 newRegiscol">
                         <form class="newRegis" action="https://clctecno.com/signup">
                             <h4>Register for Free</h4>
                             <input type="number" name="reg-mobile" placeholder="Enter your mobile number" class="inputField" minlength="10" maxlength="10" required>
@@ -583,15 +742,15 @@
                                     <label for="Policy1"> I Authorize CLC to send information time to time via SMS,
                                         WhatsApp or at Postal Address</label><br>
                                 </div>
-                                <div class="pt-4">
+                                <div class="d-flex pt-4">
                                     <input type="checkbox" id="Policy2" name="Policy2" required>
                                     <label for="Policy2">I agree to Privacy Policy </label><br>
                                 </div>
-                                <div class="btndiv">
-                                    <button>
-                                        Submit
-                                    </button>
-                                </div>
+                            </div>
+                            <div class="btndiv">
+                                <button>
+                                    Submit
+                                </button>
                             </div>
                         </form>
                     </div>
@@ -609,27 +768,26 @@
         </section>
 
         <!-- exam information -->
-        <section id="examInformation" class="p-600-40">
+        <section id="examInformation" class="p-600-40 pt-54">
             <div class="container">
                 <div class="row">
                     <div class="col-lg-7 col-12">
                         <div class="whoCan">
                             <p>Who Can Apply</p>
-                            <h5>student Studying in class</h5>
+                            <h5>Student Studying in Class</h5>
                             <h4 style="font-weight: 700;color: #000;">5, 6, 7, 8, 9, 10, 11 & 12 Science</h4>
                             <span style="color: #000;">any Education Board ( CBSE, ICSE & State Board) <br> in session
                                 2023-2024</span>
                         </div>
-                        <div>
-                            <p style="font-size: clamp(23px, 1rem + 1.8vw, 2.5rem);color: #3870c2;font-weight: 500;">
-                                Exam Information</p>
+                        <div class="examInfoBox">
+                            <p>Exam Information</p>
                         </div>
                         <div class="examDate row">
                             <div class="col-lg-6">
                                 <div class="examDateicon">
                                     <!-- <i class="fa fa-calendar" aria-hidden="true"></i> -->
-                                    <img class="icons" src="./assets/img/langing-page/Icon/date-outline-badged.svg" alt="">
-                                    <div>
+                                    <img class="icons" src="./assets/img/langing-page/Icon/date-line.svg" alt="">
+                                     <div >
                                         <h6> Exam Date</h6>
                                         <p>05 November, 2023<br> (11:00 AM to 01:00 PM)</p>
                                     </div>
@@ -648,7 +806,7 @@
                             <div class="col-lg-6">
                                 <div class="examDateicon">
                                     <!-- <i class="fa fa-shopping-bag" aria-hidden="true"></i> -->
-                                    <img class="icons" src="./assets/img/langing-page/Icon/date-line.svg" alt="">
+                                    <img class="icons" src="./assets/img/langing-page/Icon/date-outline-badged.svg" alt="">
                                     <div>
                                         <h6> Last Date of Registration</h6>
                                         <p>30 October, 2023</p>
@@ -658,8 +816,8 @@
                             <div class="col-lg-6">
                                 <div class="examDateicon">
                                     <!-- <i class="fa fa-file-text-o" aria-hidden="true"></i> -->
-                                    <img class="icons" src="./assets/img/langing-page/Icon/chart.svg" alt="">
-                                    <div>
+                                    <img class="icons" src="./assets/img/langing-page/Icon/pinpaper-filled_outline.svg" alt="">
+                                     <div>
                                         <h6> Exam Mode</h6>
                                         <p>Offline</p>
                                     </div>
@@ -668,8 +826,8 @@
                             <div class="col-lg-6">
                                 <div class="examDateicon">
                                     <!-- <i class="fa fa-signal" aria-hidden="true"></i> -->
-                                    <img class="icons" src="./assets/img/langing-page/Icon/pinpaper-filled_outline.svg" alt="">
-                                    <div>
+                                    <img class="icons" src="./assets/img/langing-page/Icon/chart.svg" alt="">
+                                   <div>
                                         <h6> Date of Result Declaration</h6>
                                         <p>22 November, 2023</p>
                                     </div>
@@ -677,9 +835,9 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-5 col-12">
-                        <div class="examImg">
-                            <img src="./assets/img/tripmin.png" alt="trip">
+                    <div class="col-lg-5 col-12 position-relative">
+                        <div class="examImg bottom-0 d-flex examImg h-100 position-absolute start-0 top-0 w-100">
+                            <img class="trip-image" src="./assets/img/tripmin.png" alt="trip">
                         </div>
                     </div>
                 </div>
@@ -688,7 +846,7 @@
         </section>
 
         <!-- how to Register   -->
-        <section id="howToRegis" class="clc-gradient p-600-40">
+        <section id="howToRegis" class="clc-gradient pt-54 pb-43">
             <div class="container">
 
                 <div class="row">
@@ -749,82 +907,84 @@
             </div>
         </section>
         <!-- pattern -->
-        <section id="Syllabus" class="p-600-40">
+        <section id="Syllabus" class="pt-54">
             <div class="container">
                 <div class="row ">
                     <div class="col-lg-12 col-12">
                         <p class="clc-page-title">Syllabus and Pattern</p>
-                        <p class="pb-4">Syllabus consists of topic from current class.Students are advised to find these
+                        <p class="para">Syllabus consists of topic from current class. Students are advised to find these
                             topics from<br> their NCERT books and prepare thoroughly. </p>
                     </div>
-                    <div class="col-lg-3 col-6">
-                        <a href="https://clctecno.com/class-v">
-                            <div class="Syllabusbtn">
-                                <i class="fa fa-book" aria-hidden="true"></i>
-                                <span>Class 5</span>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="col-lg-3 col-6">
-                        <a href="https://clctecno.com/class-vi">
-                            <div class="Syllabusbtn">
-                                <i class="fa fa-book" aria-hidden="true"></i>
-                                <span>Class 6</span>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="col-lg-3 col-6">
-                        <a href="https://clctecno.com/class-vii">
-                            <div class="Syllabusbtn">
-                                <i class="fa fa-book" aria-hidden="true"></i>
-                                <span>Class 7</span>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="col-lg-3 col-6">
-                        <a href="https://clctecno.com/class-viii">
-                            <div class="Syllabusbtn">
-                                <i class="fa fa-book" aria-hidden="true"></i>
-                                <span>Class 8</span>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="col-lg-3 col-6">
-                        <a href="https://clctecno.com/class-ix">
-                            <div class="Syllabusbtn">
-                                <i class="fa fa-book" aria-hidden="true"></i>
-                                <span>Class 9</span>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="col-lg-3 col-6">
-                        <a href="https://clctecno.com/class-x">
-                            <div class="Syllabusbtn">
-                                <i class="fa fa-book" aria-hidden="true"></i>
-                                <span>Class 10</span>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="col-lg-3 col-6">
-                        <a href="https://clctecno.com/class-xi">
-                            <div class="Syllabusbtn">
-                                <i class="fa fa-book" aria-hidden="true"></i>
-                                <span>Class 11</span>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="col-lg-3 col-6">
-                        <a href="https://clctecno.com/class-xii">
-                            <div class="Syllabusbtn">
-                                <i class="fa fa-book" aria-hidden="true"></i>
-                                <span>Class 12</span>
-                            </div>
-                        </a>
+                    <div class="Syllabusbtn-wrapper">
+                        <div class="col-auto">
+                            <a href="https://clctecno.com/class-v">
+                                <div class="Syllabusbtn">
+                                    <i class="fa fa-book" aria-hidden="true"></i>
+                                    <span>Class 5</span>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col-auto">
+                            <a href="https://clctecno.com/class-vi">
+                                <div class="Syllabusbtn">
+                                    <i class="fa fa-book" aria-hidden="true"></i>
+                                    <span>Class 6</span>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col-auto">
+                            <a href="https://clctecno.com/class-vii">
+                                <div class="Syllabusbtn">
+                                    <i class="fa fa-book" aria-hidden="true"></i>
+                                    <span>Class 7</span>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col-auto">
+                            <a href="https://clctecno.com/class-viii">
+                                <div class="Syllabusbtn">
+                                    <i class="fa fa-book" aria-hidden="true"></i>
+                                    <span>Class 8</span>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col-auto">
+                            <a href="https://clctecno.com/class-ix">
+                                <div class="Syllabusbtn">
+                                    <i class="fa fa-book" aria-hidden="true"></i>
+                                    <span>Class 9</span>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col-auto">
+                            <a href="https://clctecno.com/class-x">
+                                <div class="Syllabusbtn">
+                                    <i class="fa fa-book" aria-hidden="true"></i>
+                                    <span>Class 10</span>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col-auto">
+                            <a href="https://clctecno.com/class-xi">
+                                <div class="Syllabusbtn">
+                                    <i class="fa fa-book" aria-hidden="true"></i>
+                                    <span>Class 11</span>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col-auto">
+                            <a href="https://clctecno.com/class-xii">
+                                <div class="Syllabusbtn">
+                                    <i class="fa fa-book" aria-hidden="true"></i>
+                                    <span>Class 12</span>
+                                </div>
+                            </a>
+                        </div>
                     </div>
                 </div>
                 <div id="states">
                     <div class="row">
-                        <div class="col-lg-6 col-12" style="display: flex;align-items: center;">
+                        <div class="col-lg-5 col-12" style="display: flex;align-items: center;">
                             <div>
                                 <p class="speardacross">Speard across</p>
                                 <div class="statesdiv">
@@ -845,7 +1005,7 @@
         <!-- photo gallery  -->
         <div id="photo-gallery">
             <div class="container">
-                <div class="row">
+                <div class="row justify-content-center" >
                     <div class="gallery-carousel">
                         <div v-for="photo in photoGallery">
                             <img :src="'./assets/img/langing-page/Photos/' + photo" alt="">
@@ -856,25 +1016,25 @@
         </div>
         <!-- testimoniasl  -->
 
-        <section id="testimonials" class="clc-gradient p-600-40"> 
+        <section id="testimonials" class="clc-gradient"> 
             <div class="container">
-                <div class="row">
+                <div class="row ">
                     <!-- <div class="col-12 text-center">
                         <h1 class="new-heading bg-ligth" style="margin: 0px;background-color: transparent !important;">Testimonials</h1>
                     </div> -->
                     <div class="col-12 testimoni-carousel pb-4 mb-3">
-                        <div class="px-3 std-testimonial d-flex flex-column gap-2 text-center" v-for="test in testimonials">
+                        <div class="px-3 std-testimonial d-flex flex-column text-center" v-for="test in testimonials">
                             <div class="std-image ratio ratio-1x1">
                                 <img class="rounded-circle img-fit" :src="'./assets/img/langing-page/Testimonial/' + test.image" :alt="test.student">
                             </div>
-                            <div class="testimonial-content d-flex flex-column gap-2 text-center">
-                                <div class="testimonial-text" style="min-height:105px; font-size: clamp(13.33px, .6rem + .7vw , 18px)">{{test.content + '"'}}</div>
-                                <p class="fw-bold text-dark mb-0">{{test.student}}</p>
+                            <div class="testimonial-content d-flex flex-column text-center">
+                                <div class="testimonial-text para" style="min-height:105px;">{{test.content + '"'}}</div>
+                                <p class="fw-bold text-dark mb-0 para">{{test.student}}</p>
                                 <p class="star-box d-flex gap-2 justify-content-center align-items-center mb-0">
-                                    <i class="fa fa-star fs-5" aria-hidden="true" style="color: #f38e0a;" v-for="replica in 5"></i>
+                                    <i class="fa fa-star" aria-hidden="true" style="color: #f38e0a; font-size: 18px" v-for="replica in 5"></i>
                                 </p>
                                 <p class="mb-0">
-                                    <span v-html="test.rank"></span>
+                                    <span class="para" v-html="test.rank"></span>
                                 </p>
                             </div>
                         </div>
@@ -887,7 +1047,7 @@
                 </div>
             </div>
         </section>
-        <section id="registration" class="py-4">
+        <section id="registration" class="pt-54 pb-43">
             <div class="container">
                 <div class="row">
                     <div class="col-12 text-center">
@@ -895,10 +1055,11 @@
                             Hurry Up! <strong>Registration</strong> Open
                         </p>
                     </div>
-                    <a href="https://clctecno.com/signup" class="text-decoration-none border-0 btn-red px-3 rounded-1 w-auto mx-auto my-3" role="button">Apply For Free</a>
+                    <a href="https://clctecno.com/signup" class="text-decoration-none border-0 btn-apply px-3 rounded-1 w-auto mx-auto my-3" role="button">Apply For Free</a>
                 </div>
             </div>
         </section>
+        <hr class="mt-0" style="height: 9px; background-color:#AFD0FF; margin-bottom:63px;border: 0;">
 
         <!-- footer  -->
         <!-- footer  -->
