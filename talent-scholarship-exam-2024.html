@@ -682,7 +682,7 @@
             }
 
             #states {
-                margin: 30px 0px;
+                margin: 30px 0px 0px;
             }
         }
 
@@ -703,6 +703,8 @@
             /* object-fit: cover; */
             margin: auto
         }
+
+
 
         div#photo-gallery span.b-navigation.b-navigation-prev.slick-arrow,
         div#photo-gallery span.b-navigation.b-navigation-next.active.slick-arrow {
@@ -1047,6 +1049,17 @@
             p.ft-contactMenu {
                 margin-bottom: 10px;
             }
+
+            #states .mapDiv img {
+                object-fit: fill;
+                left: 8px;
+            }
+
+            #photo-gallery .glry-ovly {
+                position: relative;
+            }
+
+
         }
 
         @media screen and (min-width:420px) and (max-width:600px) {
@@ -1214,7 +1227,7 @@
 
             .mapDiv {
                 height: 473px;
-                margin: 20px auto;
+                margin: 20px auto 0;
             }
         }
 
@@ -1406,6 +1419,48 @@
                 display: none;
             }
         }
+
+        @media screen and (min-width:576px) and (max-width:992px) {}
+
+        @media screen and (max-width:576px) {
+            #photo-gallery .glry-ovly .overlay-01 {
+                position: absolute;
+                background-color: #3870C2;
+                width: 33.5%;
+                /* width: calc(100%/3*1.1); */
+                height: 98%;
+                top: 0;
+                left: 0;
+                opacity: 0.8;
+                z-index: 1;
+            }
+
+            #photo-gallery .glry-ovly .overlay-02 {
+                position: absolute;
+                background-color: #3870C2;
+                width: 33.5%;
+                /* width: calc(100%/3*1.1); */
+                height: 98%;
+                top: 0;
+                right: 0;
+                opacity: 0.8;
+                z-index: 1;
+            }
+
+            div#photo-gallery img {
+                width: 200px;
+                height: 230px;
+                margin: auto
+            }
+
+            /* .slick-slide.slick-active.slick-center {
+                transform: scale(1.1) !important;
+            }
+
+            .glry-ovly {
+                transform: scale(1.1) !important;
+            } */
+        }
     </style>
 
 </head>
@@ -1511,7 +1566,7 @@
                                     <!-- <i class="fa fa-calendar-o" aria-hidden="true"></i> -->
                                     <img class="icons" src="./assets/img/langing-page/Icon/coin-bag-line.svg" alt="">
                                     <div>
-                                        <h6> Exam Free</h6>
+                                        <h6> Exam Fee</h6>
                                         <p>Free</p>
                                     </div>
                                 </div>
@@ -1708,12 +1763,13 @@
                                 <p class=" speardacross">Speard across</p>
                                 <div class="statesdiv">
                                     <p><span>6 </span>States</p>
-                                    <p><span>118 </span>Districs</p>
-                                    <p><span>285+ </span>Center</p>
+                                    <p><span>118 </span>Districts</p>
+                                    <p><span>285+ </span>Centers</p>
                                 </div>
                             </div>
                         </div>
-                        <div class="col-lg-6 col-12 mapDiv text-lg-start text-center">
+                        <div class="col-lg-7 col-12 mapDiv text-lg-start text-center">
+
                             <div>
                                 <img src="https://i.filecdn.in/822clctecno23/Map2-1695735411425.jpg" alt="map"
                                     class="sml-map">
@@ -1729,8 +1785,10 @@
         <!-- photo gallery  -->
         <div id="photo-gallery">
             <div class="container">
-                <div class="row justify-content-center">
-                    <div class="gallery-carousel">
+                <div class="row justify-content-center glry-ovly">
+                    <div class="overlay-01"></div>
+                    <div class="overlay-02"></div>
+                    <div class="gallery-carousel p-0">
                         <div v-for="photo in photoGallery">
                             <img :src="'./assets/img/langing-page/Photos/' + photo" alt="">
                         </div>
@@ -1738,6 +1796,7 @@
                 </div>
             </div>
         </div>
+
         <!-- testimoniasl  -->
 
         <section id="testimonials-block" class="clc-gradient">
@@ -2141,23 +2200,19 @@
                         $(".gallery-carousel").slick({
                             slidesToShow: 4,
                             slidesToScroll: 1,
+                            spaceBetween: '0px',
                             autoplay: false,
                             nav: true,
                             dots: false,
                             autoplaySpeed: 3000,
+                            centerMode: true,
+                            centerPadding: "0px",
                             prevArrow: '<span class="b-navigation b-navigation-prev "><i class="fa fa-angle-left"></i></span>',
                             nextArrow: '<span class="b-navigation b-navigation-next active"><i class="fa fa-angle-right"></i></span>',
                             responsive: [
+
                                 {
                                     breakpoint: 992,
-                                    settings: {
-
-                                        // centerPadding: '40px',
-                                        slidesToShow: 4
-                                    }
-                                },
-                                {
-                                    breakpoint: 768,
                                     settings: {
                                         slidesToShow: 3,
 
@@ -2166,14 +2221,15 @@
                                 {
                                     breakpoint: 576,
                                     settings: {
-                                        centerPadding: '10px',
-                                        slidesToShow: 2,
+                                        centerPadding: '0px',
+                                        slidesToShow: 3,
                                         autoplay: true,
                                         nav: false,
                                         dots: false,
-                                        autoplaySpeed: 3000,
+                                        autoplaySpeed: 8000,
                                         prevArrow: false,
-                                        nextArrow: false
+                                        nextArrow: false,
+                                        centerMode: true
                                     }
                                 },
                                 {
